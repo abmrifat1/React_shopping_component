@@ -37,11 +37,11 @@ import img_iphone from '../img/iphone.jpg';
 import img_mi from '../img/mi.jpeg';
 import ShoppingItems from '../components/ShoppingItem';
 
-class MyCart extends React.Component  {
+class MyCart extends React.Component {
   static navigationOptions = {
     title: 'E-ShoP',
   };
-   shoppingItems = [
+  shoppingItems = [
     {
       img: img_orange,
       name: 'Orange',
@@ -113,7 +113,7 @@ class MyCart extends React.Component  {
       totalPrice: 59.96,
     },
   ];
-  render (){
+  render() {
     return (
       <>
         <StatusBar barStyle="dark-content" />
@@ -144,19 +144,19 @@ class MyCart extends React.Component  {
               />
             </View>
             <View style={styles.commentContent}>
-              <View style={styles.textAreaContainer} >
-              {/* <TextInput
+              <View style={styles.textAreaContainer}>
+                {/* <TextInput
                 placeholder="Enter Order level notes here"
                 style={styles.inputStyle}></TextInput> */}
-              <TextInput
-                style={styles.textArea}
-                underlineColorAndroid="transparent"
-                placeholder="Type something"
-                placeholderTextColor="grey"
-                numberOfLines={10}
-                multiline={true}
-              />
-            </View>
+                <TextInput
+                  style={styles.textArea}
+                  underlineColorAndroid="transparent"
+                  placeholder="Type something"
+                  placeholderTextColor="grey"
+                  numberOfLines={10}
+                  multiline={true}
+                />
+              </View>
             </View>
             <View style={styles.confirmContent}>
               <TouchableOpacity style={styles.confirmBtn}>
@@ -168,8 +168,7 @@ class MyCart extends React.Component  {
       </>
     );
   }
-  
-};
+}
 
 const styles = StyleSheet.create({
   parentContent: {
@@ -177,14 +176,13 @@ const styles = StyleSheet.create({
     // margin:15,
   },
   mainContent: {
-    height: '60%',
+    height: '70%',
   },
   commentContent: {
-    height: '20%',
-    
+    height: '15%',
   },
   confirmContent: {
-    height: '20%',
+    height: '15%',
   },
   commonFontSize: {
     fontSize: 10,
@@ -198,11 +196,9 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     color: 'black',
-    width: '95%',
-    height: '100%',
     borderColor: '#DDDD',
     borderWidth: 1,
-    margin: 10,
+    margin: 20,
     justifyContent: 'flex-start',
   },
 
@@ -251,16 +247,19 @@ const styles = StyleSheet.create({
     paddingLeft: 60,
     paddingRight: 60,
     justifyContent: 'center',
-    marginTop: 50,
+    marginTop: 45,
   },
   textAreaContainer: {
-    borderColor: "#DDDD",
+    borderColor: '#DDDD',
     borderWidth: 1,
-    padding: 5
+    padding: 5,
+    width: '80%',
+    margin: 15,
+    marginLeft: 35,
   },
   textArea: {
-    height: 150,
-    justifyContent: "flex-start"
+    height: 100,
+    justifyContent: 'flex-start',
   },
 });
 

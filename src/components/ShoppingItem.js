@@ -42,14 +42,12 @@ const Shopping = props => {
                   </View>
                   <View>
                     <Text style={styles.commonFontSize}>TOTAT</Text>
-                    <Text>{shopping.totalPrice}</Text>
+                    <Text style={styles.totalPrice}>{shopping.totalPrice}</Text>
                   </View>
                 </View>
               </View>
               <View style={styles.itemType}>
-                <Text style={circleStyle}>
-                   
-                </Text>
+                <Text style={circleStyle}></Text>
               </View>
             </View>
                
@@ -62,6 +60,9 @@ const styles = StyleSheet.create({
     },
     listContent: {
         flexDirection: 'row',
+        padding:10,
+        borderBottomColor: '#DDDD',
+        borderBottomWidth: 1,
       },
       img: {
         flex: 2,
@@ -87,6 +88,9 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginLeft: 7,
       },
+      totalPrice:{
+        fontWeight:"700"
+      },
       circle2: {
         height: 10,
         width: 10,
@@ -104,6 +108,7 @@ const styles = StyleSheet.create({
       itemName:{
         fontSize: 18,
          padding: 10,
+         fontWeight:"700",
       },
 
 });
