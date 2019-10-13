@@ -3,6 +3,13 @@ import { StyleSheet,View ,Image,Text} from 'react-native';
 
 const Shopping = props => {
     const {shopping}=props;
+    const{circle1,circle2,circle3}=styles;
+    let circleStyle=circle1;
+    if(shopping.type==="local"){
+        circleStyle=circle2;
+    }else if (shopping.type==="special"){
+        circleStyle=circle3;
+    }
     return(
    
              <View style={styles.listContent}>
@@ -40,7 +47,7 @@ const Shopping = props => {
                 </View>
               </View>
               <View style={styles.itemType}>
-                <Text style={styles.circle2}>
+                <Text style={circleStyle}>
                    
                 </Text>
               </View>
@@ -60,7 +67,7 @@ const styles = StyleSheet.create({
         flex: 2,
       },
       itemImage:{
-        width: 70, height: 90,
+        width: 60, height: 60,
       },
       itemDetails: {
         flex: 10,
@@ -73,10 +80,24 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 10,
       },
+      circle1: {
+        height: 10,
+        width: 10,
+        backgroundColor: '#73421A',
+        borderRadius: 50,
+        marginLeft: 7,
+      },
       circle2: {
         height: 10,
         width: 10,
         backgroundColor: '#145727',
+        borderRadius: 50,
+        marginLeft: 7,
+      },
+      circle3: {
+        height: 10,
+        width: 10,
+        backgroundColor: '#C45A08',
         borderRadius: 50,
         marginLeft: 7,
       },
