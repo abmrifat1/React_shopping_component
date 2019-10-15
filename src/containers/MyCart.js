@@ -36,140 +36,6 @@ import img_apple from '../img/appale.jpg';
 import img_iphone from '../img/iphone.jpg';
 import img_mi from '../img/mi.jpeg';
 import ShoppingItems from '../components/ShoppingItem';
-
-class MyCart extends React.Component {
-  static navigationOptions = {
-    title: 'E-ShoP',
-  };
-  shoppingItems = [
-    {
-      img: img_orange,
-      name: 'Orange',
-      type: 'organic',
-      uom: 'CASE',
-      packSize: '26CT',
-      quantity: 20,
-      perUnit: 80.99,
-      totalPrice: 170.98,
-    },
-    {
-      img: img_stb,
-      name: 'Strawberry',
-      type: 'special',
-      uom: 'CASE',
-      packSize: '26CT',
-      quantity: 20,
-      perUnit: 80.99,
-      totalPrice: 170.98,
-    },
-    {
-      img: img_mango,
-      name: 'Mango',
-      type: 'local',
-      uom: 'CASE',
-      packSize: '9PTC',
-      quantity: 4,
-      perUnit: 15.99,
-      totalPrice: 59.96,
-    },
-    {
-      img: img_orange,
-      name: 'Orange',
-      type: 'organic',
-      uom: 'CASE',
-      packSize: '36CT',
-      quantity: 2,
-      perUnit: 8.99,
-      totalPrice: 17.98,
-    },
-    {
-      img: img_apple,
-      name: 'Apple',
-      type: 'local',
-      uom: 'CASE',
-      packSize: '39PTC',
-      quantity: 4,
-      perUnit: 15.99,
-      totalPrice: 59.96,
-    },
-    {
-      img: img_iphone,
-      name: 'Celery Stalk',
-      type: 'organic',
-      uom: 'CASE',
-      packSize: '36CT',
-      quantity: 2,
-      perUnit: 8.99,
-      totalPrice: 17.98,
-    },
-    {
-      img: img_mango,
-      name: 'Cover Sprouts',
-      type: 'local',
-      uom: 'CASE',
-      packSize: '39PTC',
-      quantity: 4,
-      perUnit: 15.99,
-      totalPrice: 59.96,
-    },
-  ];
-  render() {
-    return (
-      <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <View style={styles.parentContent}>
-            <View style={styles.mainContent}>
-              <View style={styles.cartContent}>
-                <Text style={styles.cartContentText}>My Cart</Text>
-                <Text style={styles.cartContentText}>$53.97</Text>
-              </View>
-              <View style={styles.itemContent}>
-                <View style={styles.topItem}>
-                  <Text style={styles.topItemText}>04 Items</Text>
-                </View>
-                <View style={styles.typeStyle}>
-                  <Text style={styles.circle1}></Text>
-                  <Text style={styles.commonFontSize}>Organic</Text>
-                  <Text style={styles.circle2}></Text>
-                  <Text style={styles.commonFontSize}>Local</Text>
-                  <Text style={styles.circle3}></Text>
-                  <Text style={styles.commonFontSize}>Speciality</Text>
-                </View>
-              </View>
-              <FlatList
-                keyExtractor={(item, index) => index.toString()}
-                data={this.shoppingItems}
-                renderItem={data => <ShoppingItems shopping={data.item} />}
-              />
-            </View>
-            <View style={styles.commentContent}>
-              <View style={styles.textAreaContainer}>
-                {/* <TextInput
-                placeholder="Enter Order level notes here"
-                style={styles.inputStyle}></TextInput> */}
-                <TextInput
-                  style={styles.textArea}
-                  underlineColorAndroid="transparent"
-                  placeholder="Type something"
-                  placeholderTextColor="grey"
-                  numberOfLines={10}
-                  multiline={true}
-                />
-              </View>
-            </View>
-            <View style={styles.confirmContent}>
-              <TouchableOpacity style={styles.confirmBtn}>
-                <Text style={{fontSize: 15}}>CONFIRM ORDER</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </SafeAreaView>
-      </>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   parentContent: {
     // flexDirection:"column",
@@ -262,5 +128,143 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
 });
+
+class MyCart extends React.Component {
+  static navigationOptions = {
+    title: 'My Cart',
+    headerStyle: {
+      backgroundColor: '#45BF68',
+    },
+    headerTintColor: '#fff',
+    headerRight:<Text style={{color: '#FCFCFC',
+    fontSize: 18,paddingRight:20}}>$53.97</Text>
+  };
+  shoppingItems = [
+    {
+      img: img_orange,
+      name: 'Orange',
+      type: 'organic',
+      uom: 'CASE',
+      packSize: '26CT',
+      quantity: 20,
+      perUnit: 80.99,
+      totalPrice: 170.98,
+    },
+    {
+      img: img_stb,
+      name: 'Strawberry',
+      type: 'special',
+      uom: 'CASE',
+      packSize: '26CT',
+      quantity: 20,
+      perUnit: 80.99,
+      totalPrice: 170.98,
+    },
+    {
+      img: img_mango,
+      name: 'Mango',
+      type: 'local',
+      uom: 'CASE',
+      packSize: '9PTC',
+      quantity: 4,
+      perUnit: 15.99,
+      totalPrice: 59.96,
+    },
+    {
+      img: img_orange,
+      name: 'Orange',
+      type: 'organic',
+      uom: 'CASE',
+      packSize: '36CT',
+      quantity: 2,
+      perUnit: 8.99,
+      totalPrice: 17.98,
+    },
+    {
+      img: img_apple,
+      name: 'Apple',
+      type: 'local',
+      uom: 'CASE',
+      packSize: '39PTC',
+      quantity: 4,
+      perUnit: 15.99,
+      totalPrice: 59.96,
+    },
+    {
+      img: img_iphone,
+      name: 'Celery Stalk',
+      type: 'organic',
+      uom: 'CASE',
+      packSize: '36CT',
+      quantity: 2,
+      perUnit: 8.99,
+      totalPrice: 17.98,
+    },
+    {
+      img: img_mango,
+      name: 'Cover Sprouts',
+      type: 'local',
+      uom: 'CASE',
+      packSize: '39PTC',
+      quantity: 4,
+      perUnit: 15.99,
+      totalPrice: 59.96,
+    },
+  ];
+  render() {
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <View style={styles.parentContent}>
+            <View style={styles.mainContent}>
+              
+              <View style={styles.itemContent}>
+                <View style={styles.topItem}>
+                  <Text style={styles.topItemText}>04 Items</Text>
+                </View>
+                <View style={styles.typeStyle}>
+                  <Text style={styles.circle1}></Text>
+                  <Text style={styles.commonFontSize}>Organic</Text>
+                  <Text style={styles.circle2}></Text>
+                  <Text style={styles.commonFontSize}>Local</Text>
+                  <Text style={styles.circle3}></Text>
+                  <Text style={styles.commonFontSize}>Speciality</Text>
+                </View>
+              </View>
+              <FlatList
+                keyExtractor={(item, index) => index.toString()}
+                data={this.shoppingItems}
+                renderItem={data => <ShoppingItems shopping={data.item} />}
+              />
+            </View>
+            <View style={styles.commentContent}>
+              <View style={styles.textAreaContainer}>
+                {/* <TextInput
+                placeholder="Enter Order level notes here"
+                style={styles.inputStyle}></TextInput> */}
+                <TextInput
+                  style={styles.textArea}
+                  underlineColorAndroid="transparent"
+                  placeholder="Type something"
+                  placeholderTextColor="grey"
+                  numberOfLines={10}
+                  multiline={true}
+                />
+              </View>
+            </View>
+            <View style={styles.confirmContent}>
+              <TouchableOpacity style={styles.confirmBtn}>
+                <Text style={{fontSize: 15}}>CONFIRM ORDER</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </SafeAreaView>
+      </>
+    );
+  }
+}
+
+
 
 export default MyCart;
